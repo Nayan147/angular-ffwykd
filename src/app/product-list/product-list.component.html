@@ -1,5 +1,29 @@
-<h2>Products</h2>
+<h2>Products List</h2>
+<div style="background-color:aquamarine" 
+*ngFor="let productOuter of products">
+	<!-- ID:{{product.id}}<br/> -->
+<a [title] = "productOuter.name + ' details'" >
+  {{productOuter.name}}
+  </a>
+   <!-- <h4> -->
+  <p *ngIf="productOuter.description">
+    Description:{{productOuter.description}}
+     </p>
+      <!-- </h4> -->
+<!-- Price:{{product.price}}<br/>
+Description:{{product.description}}<br/> -->
+	<hr />
+  <button (click) = "share()">
+    share product
+    </button >
+    <app-product-alerts [productInner]="productOuter">
+  </app-product-alerts>
 
+
+</div>
+
+
+  
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
